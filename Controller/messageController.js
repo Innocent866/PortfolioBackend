@@ -2,12 +2,12 @@ const MESSAGE = require ("../Model/message")
 
 // create message
 const createMessage = async (req,res) =>{
-    const {from,subject,writeMessage} = req.body
+    // const {from,subject,writeMessage} = req.body
 
-    if (!from || !subject || !writeMessage ) {
-        res.status(300).json({success:false,message:"all fields are require to register"})
-        return
-    }
+    // if (!from || !subject || !writeMessage ) {
+    //     res.status(300).json({success:false,message:"all fields are require to register"})
+    //     return
+    // }
     try {
        await MESSAGE.create(req.body)
         res.status(201).json({success:true,message:"Message Sent"})
