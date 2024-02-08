@@ -4,7 +4,7 @@ const MESSAGE = require ("../Model/message")
 const createMessage = async (req,res) =>{
     try {
        const message = await MESSAGE.create(req.body)
-        res.status(201).json({success:true,message})
+        res.status(201).json({success:true,message:"Message Sent"})
     } catch (error) {
         res.status(400).json({success:false, error})
         console.log(error);
