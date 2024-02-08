@@ -5,7 +5,7 @@ const createMessage = async (req,res) =>{
     const {from,subject,writeMessage} = req.body
 
     if (!from || !subject || !writeMessage ) {
-        res.status(400).json({success:false,message:"all fields are require to register"})
+        res.status(300).json({success:false,message:"all fields are require to register"})
         return
     }
     try {
