@@ -2,6 +2,12 @@ const MESSAGE = require ("../Model/message")
 
 // create message
 const createMessage = async (req,res) =>{
+    const {name,email,password} = req.body
+
+    if (!name || !email || !password ) {
+        res.status(400).json({success:false,message:"all fields are require to register"})
+        return
+    }
     try {
        await MESSAGE.create(req.body)
         res.status(201).json({success:true,message:"Message Sent"})
