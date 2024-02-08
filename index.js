@@ -4,6 +4,7 @@ const app = express()
 const connect = require('./db/mongoDB')
 const port = process.env.PORT || 3000
 const messageRoute = require('./Route/messageRoute');
+const userRoute = require('./Route/userRoute');
 const morgan = require("morgan");
 
 // middleware
@@ -14,6 +15,7 @@ app.use(morgan('dev'))
 
 // api
 app.use('/api',messageRoute)
+app.use('/api',userRoute)
 
 // routes
 app.get('/',(req,res)=>{
